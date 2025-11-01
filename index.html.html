@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Psicóloga Marília Almeida - CRP 02/29856 | Agende sua sessão</title>
+  <meta name="description" content="Atendimento psicológico presencial e online. Especialista em Gestão de Pessoas e Competência e em Terapia Cognitivo-Comportamental (TCC). Agende sua sessão com Marília Almeida.">
+  <style>
+    :root {
+      --primaria: #FF968A;
+      --primaria-escuro: #ff7f70;
+      --rosa-claro: #F4C2C2;
+      --fundo: #fff;
+      --texto: #333;
+      --texto-suave: #555;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Poppins", system-ui, sans-serif;
+      background: var(--fundo);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, var(--rosa-claro), #fff);
+      border-bottom: 1px solid rgba(255, 150, 138, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+    }
+    .container { width: min(1100px, 92%); margin: 0 auto; }
+    .topbar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 0; gap: 1rem;
+    }
+    .logo { display: flex; align-items: center; gap: .75rem; }
+    .logo-circle {
+      width: 40px; height: 40px; border-radius: 999px;
+      background: var(--primaria); display: grid; place-items: center;
+      color: #fff; font-weight: 700; font-size: .85rem;
+    }
+    nav ul { display: flex; gap: 1rem; list-style: none; }
+    nav a {
+      text-decoration: none; color: #444; font-weight: 500; font-size: .9rem; transition: .2s;
+    }
+    nav a:hover { color: var(--primaria); }
+    .btn-cta {
+      background: var(--primaria); color: #fff; padding: .6rem 1.2rem;
+      border: none; border-radius: 999px; font-weight: 600;
+      cursor: pointer; transition: .2s; text-decoration: none; font-size: .9rem;
+    }
+    .btn-cta:hover { background: var(--primaria-escuro); }
+    .hero {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+      align-items: center; padding: 3rem 0 3.5rem;
+    }
+    .hero h1 { font-size: clamp(2.1rem, 4vw, 2.8rem); margin-bottom: 1rem; color: #2b1b1b; }
+    .hero p { color: #5a4b4b; margin-bottom: 1.5rem; }
+    .hero-img img {
+      width: 80%; border-radius: 1.5rem; box-shadow: 0 8px 25px rgba(255, 150, 138, 0.25);
+      margin-left: auto; margin-right: auto; display: block;
+    }
+    section { padding: 3.5rem 0; }
+    .section-title {
+      font-size: 1.8rem; margin-bottom: 2rem; text-align: center; color: #2b1b1b;
+    }
+    .sobre-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;
+    }
+    .sobre-grid img {
+      width: 80%; border-radius: 1.5rem; box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      margin-left: auto; margin-right: auto; display: block;
+    }
+    .sobre-texto p { margin-bottom: 1rem; color: #4d3a3a; }
+    .sobre-invertida { grid-template-columns: 1fr 1fr; }
+    .sobre-invertida img { order: 1; }
+    .sobre-invertida .sobre-texto { order: 2; }
+    #agendamento { background: #fff7f7; }
+    .agendamento-form {
+      background: #fff; border: 1px solid rgba(255,150,138,0.2);
+      box-shadow: 0 6px 20px rgba(255,150,138,0.15); padding: 2rem;
+      border-radius: 1.5rem; max-width: 600px; margin: 0 auto;
+    }
+    .agendamento-form input {
+      width: 100%; padding: .6rem; border: 1px solid rgba(255,150,138,0.4);
+      border-radius: .6rem; margin-bottom: 1rem; font-size: .9rem; outline: none;
+    }
+    .agendamento-form input:focus {
+      border-color: var(--primaria); box-shadow: 0 0 0 3px rgba(255,150,138,0.15);
+    }
+    .contato-box {
+      background: linear-gradient(135deg, rgba(255,150,138,.1), rgba(244,194,194,.35));
+      border-radius: 1.5rem; padding: 2rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;
+    }
+    .contato-box img {
+      width: 80%; border-radius: 1.5rem; box-shadow: 0 6px 20px rgba(255,150,138,0.15);
+      margin-left: auto; margin-right: auto; display: block;
+    }
+    footer { text-align: center; padding: 2rem 0; font-size: .8rem; color: #7c6b6b; }
+    .social-links { margin-top: 1rem; display: flex; justify-content: center; gap: 1.2rem; }
+    .social-links a {
+      color: #c0564d; text-decoration: none; font-weight: 500; transition: .3s;
+    }
+    .social-links a:hover { color: var(--primaria-escuro); transform: scale(1.05); }
+    .footer-img { margin-top: 1.5rem; display: flex; justify-content: center; }
+    .footer-img img {
+      width: 100px; border-radius: 50%; border: 3px solid var(--rosa-claro);
+    }
+    @media (max-width: 960px) {
+      .hero, .sobre-grid, .contato-box { grid-template-columns: 1fr; }
+      .hero-img img, .sobre-grid img, .contato-box img { width: 90%; margin: 0 auto; display: block; }
+    }
+    .whatsapp-float {
+      position: fixed; bottom: 20px; right: 20px;
+      background: #25D366; color: #fff; border-radius: 50%;
+      width: 55px; height: 55px; display: flex; justify-content: center;
+      align-items: center; font-size: 28px; text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 1000;
+      transition: transform .2s;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <div class="logo">
+        <div class="logo-circle">MA</div>
+        <div class="logo-text">
+          <strong>Marília Almeida</strong><br>
+          <span style="font-size:0.75rem;">Psicóloga · CRP 02/29856</span>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#agendamento">Agendamento</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <a href="https://wa.me/5581985780872?text=Olá,%20gostaria%20de%20agendar%20uma%20sessão" class="btn-cta">Agendar sessão</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="container hero">
+      <div>
+        <h1>A mudança que você busca começa aqui.</h1>
+        <p>Sou <strong>Marília Almeida</strong>, Psicóloga (CRP 02/29856), e ajudo você a desenvolver autoconhecimento, fortalecer a autoestima e se relacionar com você mesmo de forma mais leve.</p>
+        <a href="#agendamento" class="btn-cta">Agendar agora</a>
+      </div>
+      <div class="hero-img">
+        <img src="WhatsApp Image 2025-11-01 at 13.55.24.jpeg" alt="Psicóloga Marília Almeida">
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="container sobre-grid sobre-invertida">
+        <img src="WhatsApp Image 2025-11-01 at 14.09.37.jpeg" alt="Consultório de Psicologia - Marília Almeida">
+        <div class="sobre-texto">
+          <h2 class="section-title" style="text-align:left;">Sobre mim</h2>
+          <p>Sou <strong>Marília Almeida</strong>, Psicóloga (CRP 02/29856), <strong>especialista em Gestão de Pessoas e Competência</strong> e em <strong>Terapia Cognitivo-Comportamental (TCC)</strong>.</p>
+          <p>Meu foco é te ajudar a desenvolver autoconhecimento, fortalecer a autoestima e melhorar a forma como você se relaciona consigo mesmo.</p>
+          <p>Acredito que quando você aprende a se enxergar com mais gentileza e consciência, naturalmente passa a viver de forma mais leve e verdadeira — e é esse o caminho que quero trilhar junto com você.</p>
+          <p><strong>Minha missão:</strong> melhorar sua relação com você mesmo, promovendo uma vida mais equilibrada, consciente e com mais qualidade emocional.</p>
+          <p>👥 Atendimento a adolescentes e adultos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="agendamento">
+      <div class="container">
+        <h2 class="section-title">Agende sua sessão</h2>
+        <form class="agendamento-form" id="formAgendamento">
+          <label for="nome">Nome completo*</label>
+          <input type="text" id="nome" required placeholder="Seu nome completo">
+          <label for="data">Data desejada*</label>
+          <input type="date" id="data" required>
+          <label for="hora">Horário preferido*</label>
+          <input type="time" id="hora" required>
+          <button type="submit" class="btn-cta" style="width:100%;">Confirmar agendamento</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container contato-box">
+        <div class="contato-info">
+          <h3>Vamos conversar?</h3>
+          <p>Atendimento psicológico com base na Terapia Cognitivo-Comportamental (TCC).</p>
+          <p><strong>📞 WhatsApp:</strong> <a href="https://wa.me/5581985780872" style="color:#c0564d; text-decoration:none;">(81) 98578-0872</a></p>
+          <p><strong>📧 E-mail:</strong> <a href="mailto:psimariliaalmeida@gmail.com" style="color:#c0564d; text-decoration:none;">psimariliaalmeida@gmail.com</a></p>
+          <p><strong>🏠 Endereço:</strong><br>
+          Rua José de Alencar, nº 44 – Edifício Ambassador<br>
+          Boa Vista – Recife/PE<br>
+          Próximo ao restaurante Mustang e ao Shopping Boa Vista.<br>
+          <strong>📍 Atendimento presencial e online.</strong></p>
+<br>
+          <a href="https://wa.me/5581985780872?text=Olá,%20gostaria%20de%20agendar%20uma%20sessão" class="btn-cta" style="margin-top:1rem;">Falar no WhatsApp</a>
+        </div>
+        <img src="WhatsApp Image 2025-11-01 at 14.09.59.jpeg" alt="Psicóloga Marília Almeida">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="ano"></span> Psicóloga Marília Almeida · CRP 02/29856</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/psimariliaalmeida/" target="_blank">📸 Instagram</a>
+      <a href="mailto:psimariliaalmeida@gmail.com">✉️ E-mail</a>
+    </div>
+    <div class="footer-img">
+      <img src="WhatsApp Image 2025-11-01 at 14.09.37.jpeg" alt="Marília Almeida">
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5581985780872?text=Olá,%20gostaria%20de%20agendar%20uma%20sessão" class="whatsapp-float" target="_blank">💬</a>
+
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+    document.getElementById('formAgendamento').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const data = document.getElementById('data').value;
+      const hora = document.getElementById('hora').value;
+      const mensagem = `Olá, sou ${nome}. Gostaria de agendar uma sessão no dia ${data.split('-').reverse().join('/')} às ${hora}.`;
+      const url = `https://wa.me/5581985780872?text=${encodeURIComponent(mensagem)}`;
+      window.open(url, '_blank');
+    });
+  </script>
+</body>
+</html>
